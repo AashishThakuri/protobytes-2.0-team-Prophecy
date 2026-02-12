@@ -1,0 +1,308 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Corbyn';
+  src: url('/fonts/Corbyn.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-heading {
+  font-family: 'Playfair Display', serif;
+
+}
+
+/* Strata hero CTA button (inspired by Uiverse button, prefixed to avoid collisions) */
+.strata-type--C {
+  --line_color: #111111;
+  --back_color: rgba(0, 0, 0, 0.06);
+}
+
+.strata-cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strata-button {
+  position: relative;
+  z-index: 0;
+  width: 195px;
+  height: 48px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.strata-button__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.strata-button::before,
+.strata-button::after,
+.strata-button__text::before,
+.strata-button__text::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+
+.strata-button::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.strata-button::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+
+.strata-button__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.strata-button__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+
+.strata-button__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.strata-button__line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+
+.strata-button__line:nth-child(1),
+.strata-button__line:nth-child(1)::before {
+  left: 0;
+}
+
+.strata-button__line:nth-child(2),
+.strata-button__line:nth-child(2)::before {
+  right: 0;
+}
+
+.strata-button:hover {
+  letter-spacing: 6px;
+}
+
+.strata-button:hover::before,
+.strata-button:hover .strata-button__text::before {
+  width: 8px;
+}
+
+.strata-button:hover::after,
+.strata-button:hover .strata-button__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.strata-button__drow1,
+.strata-button__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+
+.strata-button__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+
+.strata-button__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+
+.strata-button__drow1::before,
+.strata-button__drow1::after,
+.strata-button__drow2::before,
+.strata-button__drow2::after {
+  content: '';
+  position: absolute;
+}
+
+.strata-button__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+
+.strata-button__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+
+.strata-button__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+
+.strata-button__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+
+.strata-button__drow1,
+.strata-button__drow1::before,
+.strata-button__drow1::after,
+.strata-button__drow2,
+.strata-button__drow2::before,
+.strata-button__drow2::after {
+  background: var(--back_color);
+}
+
+.strata-button:hover .strata-button__drow1 {
+  animation: strata-drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+
+.strata-button:hover .strata-button__drow1::before {
+  animation: strata-drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+
+.strata-button:hover .strata-button__drow1::after {
+  animation: strata-drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+
+.strata-button:hover .strata-button__drow2 {
+  animation: strata-drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.strata-button:hover .strata-button__drow2::before {
+  animation: strata-drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+
+.strata-button:hover .strata-button__drow2::after {
+  animation: strata-drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes strata-drow1 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100px;
+  }
+}
+
+@keyframes strata-drow2 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  11% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 120px;
+  }
+}
+
+@keyframes strata-drow3 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80px;
+  }
+}
+
+@keyframes strata-drow4 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 120px;
+  }
+}
+
+@keyframes strata-drow5 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 124px;
+  }
+}
