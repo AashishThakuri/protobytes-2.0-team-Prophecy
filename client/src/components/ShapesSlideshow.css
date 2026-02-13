@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+.slideshow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Changed from center to flex-start (left) */
+    pointer-events: none;
+    opacity: 0;
+}
+
+.slide--current {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.slide__img-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    will-change: transform;
+    clip-path: circle(55% at 70% 50%);
+}
+
+.slide__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+    /* Optional: nice dim overlay on image itself? No, clip path handles it */
+}
+
+.slide__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Left align items */
+    text-align: left;
+    /* Left align text */
+    pointer-events: none;
+    z-index: 1000;
+    padding-left: 15vw;
+    /* Position 15% from left */
+    padding-right: 50%;
+    /* limit width to not overlap image too much */
+    color: #fff;
+    box-sizing: border-box;
+    /* Ensure padding includes in width */
+}
+
+.slide__title {
+    font-size: 6vw;
+    /* Slightly smaller to fit left */
+    font-weight: 400;
+    margin: 0;
+    line-height: 0.9;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(100%);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slide__desc {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(2rem);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+}
