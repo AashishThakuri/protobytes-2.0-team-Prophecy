@@ -1,0 +1,44 @@
+{
+	"name": "materialsymbols",
+	"displayName": "Material Rounded Product Icons",
+	"description": "Add a fresh coat of paint to VSCode with rounded Material Icons.",
+	"publisher": "mszylkowski",
+	"version": "1.0.1",
+	"engines": {
+		"vscode": "*"
+	},
+	"bugs": {
+		"url": "https://github.com/mszylkowski/vscode-materialsymbols/issues"
+	},
+	"license": "MIT",
+	"icon": "./icon.png",
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"productIconThemes": [
+			{
+				"id": "material-symbols-rounded",
+				"label": "Material Symbols Rounded",
+				"path": "./theme/rounded-product-icon-theme.json"
+			}
+		]
+	},
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mszylkowski/vscode-materialsymbols"
+	},
+	"homepage": "https://github.com/mszylkowski/vscode-materialsymbols",
+	"pricing": "Free",
+	"__metadata": {
+		"id": "7b050206-0b0a-431e-9c91-2d547b350b28",
+		"publisherId": "b2d3b907-5c16-43e7-8023-caee2a8249c7",
+		"publisherDisplayName": "mszylkowski",
+		"targetPlatform": "universal",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1768386240272
+	}
+}

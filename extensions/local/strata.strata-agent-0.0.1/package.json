@@ -1,0 +1,34 @@
+{
+	"name": "strata-agent",
+	"displayName": "Strata Agent",
+	"description": "Prototype Strata chat/agent extension that can edit code.",
+	"version": "0.0.1",
+	"publisher": "strata",
+	"engines": {
+		"vscode": "^1.86.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension.js",
+	"activationEvents": [
+		"onCommand:strata.openChat"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "strata.openChat",
+				"title": "Strata: Open Agent Chat",
+				"category": "Strata"
+			}
+		]
+	},
+	"dependencies": {
+		"@google/genai": "^1.36.0"
+	},
+	"__metadata": {
+		"isApplicationScoped": false,
+		"installedTimestamp": 1768770465325,
+		"pinned": false
+	}
+}
